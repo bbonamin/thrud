@@ -1,4 +1,4 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  http_basic_authenticate_with :name => Figaro.env.http_basic_user, :password => Figaro.env.http_basic_password
+  http_basic_authenticate_with :name => ENV['HTTP_BASIC_USER'], :password => ENV['HTTP_BASIC_PASSWORD']
 end
